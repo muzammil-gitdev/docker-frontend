@@ -5,6 +5,8 @@ import { MonacoBinding } from "y-monaco"; // Use to connect yjs to Monaco
 import * as Y from "yjs";
 import { SocketIOProvider } from "y-socket.io";
 
+// install monaco-editor@0.44.0 along with monaco-editor/react
+
 function App() {
   const editorRef = useRef(null);
 
@@ -23,6 +25,9 @@ function App() {
       "http://localhost:3000",
       "monaco",
       ydoc,
+      {
+        autoConnect: true,
+      },
     );
 
     // connecting Yjs to the actual editor UI
